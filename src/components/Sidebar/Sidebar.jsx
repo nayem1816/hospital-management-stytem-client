@@ -4,6 +4,7 @@ import AccordingComponent from "./AccordingComponent/AccordingComponent";
 import MenuOpenIcon from "@material-ui/icons/MenuOpen";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { Divider, Drawer, IconButton, List } from "@material-ui/core";
+import "./Sidebar.css";
 
 const Sidebar = ({ classes, open, handleDrawerClose }) => {
     const theme = useTheme();
