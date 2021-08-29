@@ -8,7 +8,7 @@ import Topbar from "./components/Topbar/Topbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import clsx from "clsx";
 import { useState } from "react";
-import { useStyles } from "./basic-style/App.style";
+import { useStyles } from "./utilities/basic-style/App.style";
 import DoctorList from "./pages/Doctor/DoctorList/DoctorList";
 import AddPatient from "./pages/Patient/AddPatient/AddPatient";
 import PatientList from "./pages/Patient/PatientList/PatientList";

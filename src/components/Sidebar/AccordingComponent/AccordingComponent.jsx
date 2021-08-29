@@ -16,7 +16,6 @@ const AccordingComponent = () => {
     const [expanded, setExpanded] = React.useState(false);
 
     const handleChange = (panel) => (event, isExpanded) => {
-        console.log(panel);
         setExpanded(isExpanded ? panel : false);
     };
 
@@ -24,12 +23,10 @@ const AccordingComponent = () => {
     let count2 = 1;
 
     return (
-        <div
-            style={{ margin: "0", backgroundColor: "blue" }}
-            className={classes.root}
-        >
-            {menuItemsList?.map((menuList) => (
+        <div style={{ margin: "0" }} className={classes.root}>
+            {menuItemsList?.map((menuList, i) => (
                 <Accordion
+                    key={i}
                     style={{ margin: "0" }}
                     expanded={expanded === "panel" + count1++}
                     onChange={handleChange("panel" + count2++)}
@@ -40,8 +37,8 @@ const AccordingComponent = () => {
                     <AccordionDetails
                         style={{ display: "block", backgroundColor: "white" }}
                     >
-                        {menuList?.subMenu?.map((sub) => (
-                            <p className="menu-items">
+                        {menuList?.subMenu?.map((sub, j) => (
+                            <p key={j} className="menu-items">
                                 <Link
                                     to={sub?.subMenuLink}
                                     className="menu-item-link"

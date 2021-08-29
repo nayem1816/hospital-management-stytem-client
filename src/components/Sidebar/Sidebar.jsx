@@ -5,6 +5,7 @@ import MenuOpenIcon from "@material-ui/icons/MenuOpen";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { Divider, Drawer, IconButton, List } from "@material-ui/core";
 import "./Sidebar.css";
+import userImage from "../../utilities/images/user.png";
 
 const Sidebar = ({ classes, open, handleDrawerClose }) => {
     const theme = useTheme();
@@ -19,8 +20,8 @@ const Sidebar = ({ classes, open, handleDrawerClose }) => {
             }}
         >
             <div className={classes.drawerHeader}>
-                <div style={{ marginRight: "30px" }} className="">
-                    <h1>Hospital</h1>
+                <div className="">
+                    <h2 className="me-3">Hospital</h2>
                 </div>
                 <IconButton onClick={handleDrawerClose}>
                     {theme.direction === "ltr" ? (
@@ -31,6 +32,14 @@ const Sidebar = ({ classes, open, handleDrawerClose }) => {
                 </IconButton>
             </div>
             <Divider />
+            <div className="text-center my-4">
+                <img
+                    className="img-fluid image-style border  border-4 rounded-circle"
+                    src={userImage}
+                    alt={userImage}
+                />
+                <h5 className="mt-2">Admin</h5>
+            </div>
             <List>
                 <AccordingComponent />
             </List>

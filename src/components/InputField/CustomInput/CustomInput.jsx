@@ -1,11 +1,15 @@
 import { TextField } from "@material-ui/core";
 import React from "react";
 
-const CustomInput = () => {
+const CustomInput = ({ placeHolder, inputType, ...otherProps }) => {
     return (
-        <form noValidate autoComplete="off">
-            <TextField id="standard-basic" label="Standard" />
-        </form>
+        <TextField
+            className="w-100"
+            type={inputType}
+            label={placeHolder}
+            variant="filled"
+            {...otherProps}
+        />
     );
 };
 
