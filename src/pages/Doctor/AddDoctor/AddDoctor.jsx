@@ -45,6 +45,13 @@ const AddDoctor = () => {
                         <div className="col-md-6 p-3">
                             <CustomPassInput register={register} />
                         </div>
+                        <div className="col-md-6 p-3">
+                            <CustomInput
+                                placeHolder={"Designation"}
+                                inputType={"text"}
+                                {...register("designation", { required: true })}
+                            />
+                        </div>
                         <div className="col-md-12 p-3">
                             <CustomButton
                                 btnType={"btn"}
