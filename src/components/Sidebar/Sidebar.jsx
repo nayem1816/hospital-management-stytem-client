@@ -17,6 +17,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import DashboardIcon from '@material-ui/icons/Dashboard';
 
 const drawerWidth = 240;
 
@@ -137,7 +138,7 @@ const Sidebar = () => {
           {["Dashboard", "Doctor", "Patient", "Department", "Doctor Schedule", "Appointment", "Payment", "Report", "Human Resource", "Bed Manager", "Notice"].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <DashboardIcon/> : <MailIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
@@ -161,7 +162,7 @@ const Sidebar = () => {
         })}
       >
         <div className={classes.drawerHeader} />
-        <Typography paragraph>
+        {/* <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
           dolor purus non enim praesent elementum facilisis leo vel. Risus at
@@ -189,7 +190,7 @@ const Sidebar = () => {
           sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
           eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
           posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+        </Typography> */}
       </main>
     </div>
   );
