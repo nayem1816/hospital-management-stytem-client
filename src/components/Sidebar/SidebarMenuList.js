@@ -33,20 +33,7 @@ const menuItemsList = [
                 subMenuLink: "/patient/patientList",
             },
         ],
-    },
-    {
-        mainMenu: "Patient",
-        subMenu: [
-            {
-                subMenuName: "Add Patient",
-                subMenuLink: "/patient/addPatient",
-            },
-            {
-                subMenuName: "Patient List",
-                subMenuLink: "/patient/patientList",
-            },
-        ],
-    },
+    },   
     {
         mainMenu: "Department",
         subMenu: [
