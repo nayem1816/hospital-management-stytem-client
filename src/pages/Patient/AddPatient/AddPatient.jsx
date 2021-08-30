@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CustomPassInput from "../../../components/InputField/CustomPassInput/CustomPassInput";
 import CustomInput from "./../../../components/InputField/CustomInput/CustomInput";
 import { useForm } from "react-hook-form";
 import CustomButton from "../../../components/InputField/CustomButton/CustomButton";

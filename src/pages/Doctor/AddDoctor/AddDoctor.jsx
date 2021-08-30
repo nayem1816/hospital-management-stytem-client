@@ -30,99 +30,12 @@ const AddDoctor = () => {
                 {...register("firstName", { required: true })}
               />
             </div>
-<<<<<<< HEAD
             <div className="col-md-6 p-3 last-name">
               <CustomInput
                 placeHolder={"Last Name"}
                 inputType={"text"}
                 {...register("lastName", { required: true })}
               />
-=======
-            <div className="mt-3">
-                <form className="" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="row">
-                        <div className="col-md-6 p-3 first-name">
-                            <CustomInput
-                                placeHolder={"First Name"}
-                                inputType={"text"}
-                                {...register("firstName", { required: true })}
-                            />
-                        </div>
-                        <div className="col-md-6 p-3 last-name">
-                            <CustomInput
-                                placeHolder={"Last Name"}
-                                inputType={"text"}
-                                {...register("lastName", { required: true })}
-                            />
-                        </div>
-                        <div className="col-md-6 p-3 email">
-                            <CustomInput
-                                placeHolder={"Email"}
-                                inputType={"email"}
-                                {...register("email", { required: true })}
-                            />
-                        </div>
-                        <div className="col-md-6 p-3 password">
-                            <CustomPassInput register={register} />
-                        </div>
-                        <div className="col-md-6 p-3 designation">
-                            <CustomInput
-                                placeHolder={"Designation"}
-                                inputType={"text"}
-                                {...register("designation", { required: true })}
-                            />
-                        </div>
-                        <div className="col-md-6 p-3 department">
-                            <CustomSelect
-                                placeHolder="Department"
-                                selectOptions={[
-                                    "Neurology",
-                                    "Gynecology",
-                                    "Microbiology",
-                                    "Pharmacy",
-                                    "Neonatal",
-                                ]}
-                                register={register}
-                            />
-                        </div>
-                        <div className="col-md-6 p-3 address">
-                            <CustomInput
-                                placeHolder={"Address"}
-                                inputType={"text"}
-                                {...register("address", { required: true })}
-                            />
-                        </div>
-                        <div className="col-md-6 p-3 specialist">
-                            <CustomInput
-                                placeHolder={"Specialist"}
-                                inputType={"text"}
-                                {...register("specialist", { required: true })}
-                            />
-                        </div>
-                        <div className="col-md-6 p-3 mobile">
-                            <CustomInput
-                                placeHolder={"Mobile"}
-                                inputType={"number"}
-                                {...register("mobile", { required: true })}
-                            />
-                        </div>
-                        <div className="col-md-6 p-3 mobile">
-                            <UploadField />
-                        </div>
-                        <div className="col-md-12 p-3 button">
-                            <CustomButton
-                                btnType={"btn"}
-                                btnTxt={"Reset"}
-                                color="secondary"
-                            />
-                            <CustomButton
-                                btnType={"submit"}
-                                btnTxt={"Submit"}
-                            />
-                        </div>
-                    </div>
-                </form>
->>>>>>> 0e5960af920bfd1206ece7f082778399e87de603
             </div>
             <div className="col-md-6 p-3 email">
               <CustomInput
