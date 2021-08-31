@@ -123,6 +123,13 @@ const AddDoctor = () => {
                                 register={register}
                             />
                         </div>
+                        <div className="col-md-6 p-3 doctor-sex">
+                            <CustomSelect
+                                placeHolder="Sex"
+                                selectOptions={["Male", "Female", "Other"]}
+                                register={register}
+                            />
+                        </div>
                         <div className="col-md-12 p-3 button">
                             <CustomButton
                                 btnType={"btn"}
