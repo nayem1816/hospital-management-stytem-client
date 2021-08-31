@@ -1,41 +1,33 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import { useState } from "react";
+import "./UploadField.css";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        "& > *": {
-            margin: theme.spacing(1),
-        },
-    },
-    input: {
-        display: "none",
-    },
-}));
+const UploadField = ({ placeHolder }) => {
+    const [fileText, setFileText] = useState("No file chosen...");
 
-const UploadField = () => {
-    const classes = useStyles();
+    const fileSelect = () => {
+        const fileInput = document.getElementById("file-upload-input");
+        fileInput.click();
+    };
+    const fileNameChange = () => {
+        const fileInput = document.getElementById("file-upload-input");
+        console.log(fileInput.files);
+        const filename = fileInput.files[0].name;
+        setFileText(filename);
+    };
+
     return (
-        <div className="">
-            <input
-                accept="image/*"
-                className={classes.input}
-                id="contained-button-file"
-                multiple
-                type="file"
-            />
-            <label htmlFor="contained-button-file">
-                <Button
-                    variant="contained"
-                    color="default"
-                    component="span"
-                    size="large"
-                    startIcon={<CloudUploadIcon />}
-                >
-                    Upload
-                </Button>
-            </label>
+        <div className="file-upload">
+            <div onClick={fileSelect} className="file-upload-select">
+                <div className="file-select-button">{placeHolder}</div>
+                <div className="file-select-name">{fileText}</div>
+                <input
+                    onChange={fileNameChange}
+                    type="file"
+                    name="file-upload-input"
+                    id="file-upload-input"
+                />
+            </div>
         </div>
     );
 };

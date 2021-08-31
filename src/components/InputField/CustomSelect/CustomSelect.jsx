@@ -9,8 +9,10 @@ const CustomSelect = ({ placeHolder, selectOptions, register }) => {
             </InputLabel>
             <Select {...register("department", { required: true })} native>
                 <option aria-label="None" value="" />
-                {selectOptions.map((options) => (
-                    <option value={options}>{options}</option>
+                {selectOptions.map((options, i) => (
+                    <option key={i} value={options}>
+                        {options}
+                    </option>
                 ))}
             </Select>
         </FormControl>
