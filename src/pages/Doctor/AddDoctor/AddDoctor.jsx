@@ -8,6 +8,7 @@ import CustomSelect from "../../../components/InputField/CustomSelect/CustomSele
 import UploadField from "../../../components/InputField/UploadField/UploadField";
 import CustomTextArea from "../../../components/InputField/CustomTextArea/CustomTextArea";
 import CustomDatePicker from "../../../components/InputField/CustomDatePicker/CustomDatePicker";
+import CustomRadioBtn from "../../../components/InputField/CustomRadioBtn/CustomRadioBtn";
 
 const AddDoctor = () => {
     const { register, handleSubmit } = useForm();
@@ -101,9 +102,9 @@ const AddDoctor = () => {
                                 })}
                             />
                         </div>
-                        <div className="col-md-6 p-3 short-biography">
+                        <div className="col-md-6 p-3 doctor-birthday">
                             <CustomDatePicker
-                                placeHolder={"Birthday"}
+                                placeHolder={"Date Of Birth"}
                                 {...register("birthday", { required: true })}
                             />
                         </div>
@@ -124,12 +125,16 @@ const AddDoctor = () => {
                             />
                         </div>
                         <div className="col-md-6 p-3 doctor-sex">
-                            <CustomSelect
-                                placeHolder="Sex"
+                            <CustomRadioBtn
+                                titleName={"Sex"}
+                                regName={"sex"}
+                                defaultValue={false}
                                 selectOptions={["Male", "Female", "Other"]}
+                                rules={{ required: true }}
                                 register={register}
                             />
                         </div>
+
                         <div className="col-md-12 p-3 button">
                             <CustomButton
                                 btnType={"btn"}

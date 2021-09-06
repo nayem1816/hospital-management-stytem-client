@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import CustomButton from "../../../components/InputField/CustomButton/CustomButton";
 import CustomSelect from "../../../components/InputField/CustomSelect/CustomSelect";
 import UploadField from "../../../components/InputField/UploadField/UploadField";
+import CustomDatePicker from "../../../components/InputField/CustomDatePicker/CustomDatePicker";
 
 const AddPatient = () => {
     const { register, handleSubmit } = useForm();
@@ -88,11 +89,10 @@ const AddPatient = () => {
                                 register={register}
                             />
                         </div>
-                        <div className="col-md-6 p-3 address">
-                            <CustomInput
+                        <div className="col-md-6 p-3 patient-birthday">
+                            <CustomDatePicker
                                 placeHolder={"Date Of Birth"}
-                                inputType={"text"}
-                                {...register("dateOfBirth", { required: true })}
+                                {...register("birthday", { required: true })}
                             />
                         </div>
                         <div className="col-md-6 p-3 address">

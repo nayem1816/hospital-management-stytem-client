@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import "./UploadField.css";
+import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 
 const UploadField = ({ placeHolder }) => {
-    const [fileText, setFileText] = useState("No file chosen...");
+    const [fileText, setFileText] = useState(placeHolder);
 
     const fileSelect = () => {
         const fileInput = document.getElementById("file-upload-input");
@@ -19,7 +20,9 @@ const UploadField = ({ placeHolder }) => {
     return (
         <div className="file-upload">
             <div onClick={fileSelect} className="file-upload-select">
-                <div className="file-select-button">{placeHolder}</div>
+                <div className="file-select-button px-4">
+                    <CloudUploadIcon />
+                </div>
                 <div className="file-select-name">{fileText}</div>
                 <input
                     onChange={fileNameChange}

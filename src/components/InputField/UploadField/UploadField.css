@@ -8,6 +8,7 @@
     position: relative;
     border-radius: 5px 5px 0 0;
     border-bottom: 1px solid #666666;
+    height: 56px;
 }
 .file-upload .file-upload-select:hover {
     border-bottom: 1px solid black;

@@ -38,8 +38,11 @@ import AddNotice from "./pages/Notice/AddNotice/AddNotice";
 import NoticeList from "./pages/Notice/NoticeList/NoticeList";
 
 function App() {
+    const matchResult = window.matchMedia("(max-width:900px)");
+    const mobileScreen = matchResult.matches;
     const classes = useStyles();
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(mobileScreen ? false : true);
+
     const handleDrawerOpen = () => {
         setOpen(true);
     };
