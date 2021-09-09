@@ -6,6 +6,8 @@ import CustomButton from "../../../components/InputField/CustomButton/CustomButt
 import CustomSelect from "../../../components/InputField/CustomSelect/CustomSelect";
 import UploadField from "../../../components/InputField/UploadField/UploadField";
 import CustomDatePicker from "../../../components/InputField/CustomDatePicker/CustomDatePicker";
+import CustomTextArea from "../../../components/InputField/CustomTextArea/CustomTextArea";
+import CustomRadioBtn from "../../../components/InputField/CustomRadioBtn/CustomRadioBtn";
 
 const AddPatient = () => {
     const { register, handleSubmit } = useForm();
@@ -89,37 +91,47 @@ const AddPatient = () => {
                                 register={register}
                             />
                         </div>
+                        <div className="col-md-6 p-3 mobile">
+                            <UploadField placeHolder={"Patient Image"} />
+                        </div>
                         <div className="col-md-6 p-3 patient-birthday">
                             <CustomDatePicker
                                 placeHolder={"Date Of Birth"}
                                 {...register("birthday", { required: true })}
                             />
                         </div>
-                        <div className="col-md-6 p-3 address">
-                            <CustomInput
+                        <div className="col-md-6 p-3 patient-address">
+                            <CustomTextArea
                                 placeHolder={"Address"}
-                                inputType={"text"}
-                                {...register("address", { required: true })}
-                            />
-                        </div>
-                        <div className="col-md-6 p-3 specialist">
-                            <CustomInput
-                                placeHolder={"Patient History"}
-                                inputType={"text"}
-                                {...register("patientHistory", {
+                                {...register("address", {
                                     required: true,
                                 })}
                             />
                         </div>
-                        <div className="col-md-6 p-3 department">
-                            <CustomSelect
-                                placeHolder="Sex"
-                                selectOptions={["Male", "Female", "Others"]}
-                                register={register}
+                        <div className="col-md-6 p-3 patient-history">
+                            <CustomTextArea
+                                placeHolder={"History"}
+                                {...register("history", {
+                                    required: true,
+                                })}
                             />
                         </div>
-                        <div className="col-md-6 p-3 mobile">
-                            <UploadField placeHolder={"Patient Image"} />
+                        <div className="col-md-6 p-3 prefer-to">
+                            <CustomInput
+                                placeHolder={"Prefer to"}
+                                inputType={"text"}
+                                {...register("preferTo", { required: true })}
+                            />
+                        </div>
+                        <div className="col-md-6 p-3 patient-sex">
+                            <CustomRadioBtn
+                                titleName={"Sex"}
+                                regName={"sex"}
+                                defaultValue={false}
+                                selectOptions={["Male", "Female", "Other"]}
+                                rules={{ required: true }}
+                                register={register}
+                            />
                         </div>
                         <div className="col-md-12 p-3 button">
                             <CustomButton
