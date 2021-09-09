@@ -6,3 +6,18 @@
 a {
     text-decoration: none;
 }
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(128, 128, 128);
+    /* border-radius: 10px; */
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.582);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
