@@ -4,6 +4,7 @@ import CustomInput from "./../../../components/InputField/CustomInput/CustomInpu
 import { useForm } from "react-hook-form";
 import CustomButton from "../../../components/InputField/CustomButton/CustomButton";
 import CustomSelect from "../../../components/InputField/CustomSelect/CustomSelect";
+import CustomTextArea from "../../../components/InputField/CustomTextArea/CustomTextArea";
 
 const AddPayment = () => {
   const { register, handleSubmit } = useForm();
@@ -44,13 +45,6 @@ const AddPayment = () => {
             </div>
             <div className="col-md-6 p-3 last-name">
               <CustomInput
-                placeHolder={"Account Name"}
-                inputType={"text"}
-                {...register("accountName", { required: true })}
-              />
-            </div>
-            <div className="col-md-6 p-3 last-name">
-              <CustomInput
                 placeHolder={"Total Amount"}
                 inputType={"number"}
                 {...register("totalAmount", { required: true })}
@@ -59,28 +53,23 @@ const AddPayment = () => {
             <div className="col-md-6 p-3 department">
               <CustomSelect
                 placeHolder="Payment Method"
-                selectOptions={[
-                  "Debit Card",
-                  "Credit Card",
-                ]}
+                selectOptions={["Debit Card", "Credit Card"]}
                 register={register}
               />
             </div>
             <div className="col-md-6 p-3 department">
               <CustomSelect
                 placeHolder="Payment Status"
-                selectOptions={[
-                  "Complete",
-                  "Pending",
-                ]}
+                selectOptions={["Complete", "Pending"]}
                 register={register}
               />
             </div>
-            <div className="col-md-6 p-3 email">
-              <CustomInput
+            <div className="col-md-12 p-3 payment-description">
+              <CustomTextArea
                 placeHolder={"Description"}
-                inputType={"text"}
-                {...register("description", { required: true })}
+                {...register("description", {
+                  required: true,
+                })}
               />
             </div>
             <div className="col-md-12 p-3 button">

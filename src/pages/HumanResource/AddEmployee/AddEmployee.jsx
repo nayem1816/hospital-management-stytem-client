@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import CustomButton from "../../../components/InputField/CustomButton/CustomButton";
 import CustomSelect from "../../../components/InputField/CustomSelect/CustomSelect";
 import UploadField from "../../../components/InputField/UploadField/UploadField";
+import CustomTextArea from "../../../components/InputField/CustomTextArea/CustomTextArea";
+import CustomRadioBtn from "../../../components/InputField/CustomRadioBtn/CustomRadioBtn";
 
 const AddEmployee = () => {
     const { register, handleSubmit } = useForm();
@@ -83,22 +85,26 @@ const AddEmployee = () => {
                                 register={register}
                             />
                         </div>
-                        <div className="col-md-6 p-3 address">
-                            <CustomInput
+                        <div className="col-md-6 p-3 employee-image">
+                            <UploadField placeHolder={"Employee Image"} />
+                        </div>
+                        <div className="col-md-12 p-3 address">
+                            <CustomTextArea
                                 placeHolder={"Address"}
-                                inputType={"text"}
-                                {...register("address", { required: true })}
+                                {...register("address", {
+                                    required: true,
+                                })}
                             />
                         </div>
-                        <div className="col-md-6 p-3 department">
-                            <CustomSelect
-                                placeHolder="Sex"
-                                selectOptions={["Male", "Female", "Others"]}
+                        <div className="col-md-6 p-3 employee-sex">
+                            <CustomRadioBtn
+                                titleName={"Sex"}
+                                regName={"sex"}
+                                defaultValue={false}
+                                selectOptions={["Male", "Female", "Other"]}
+                                rules={{ required: true }}
                                 register={register}
                             />
-                        </div>
-                        <div className="col-md-6 p-3 mobile">
-                            <UploadField placeHolder={"Employee Image"} />
                         </div>
                         <div className="col-md-12 p-3 button">
                             <CustomButton

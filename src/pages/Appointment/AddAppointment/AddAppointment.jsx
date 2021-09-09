@@ -4,7 +4,8 @@ import CustomPassInput from "../../../components/InputField/CustomPassInput/Cust
 import CustomInput from "./../../../components/InputField/CustomInput/CustomInput";
 import { useForm } from "react-hook-form";
 import CustomButton from "../../../components/InputField/CustomButton/CustomButton";
-import CustomSelect from "../../../components/InputField/CustomSelect/CustomSelect";
+import CustomTextArea from "../../../components/InputField/CustomTextArea/CustomTextArea";
+import CustomRadioBtn from "../../../components/InputField/CustomRadioBtn/CustomRadioBtn";
 
 const AddAppointment = () => {
   const { register, handleSubmit } = useForm();
@@ -74,21 +75,21 @@ const AddAppointment = () => {
                 {...register("appointmentDate", { required: true })}
               />
             </div>
-            <div className="col-md-6 p-3 last-name">
-              <CustomInput
+            <div className="col-md-12 p-3 problem">
+              <CustomTextArea
                 placeHolder={"Problem"}
-                inputType={"text"}
-                {...register("problem", { required: true })}
+                {...register("problem", {
+                  required: true,
+                })}
               />
             </div>
-            <div className="col-md-6 p-3 department">
-              <CustomSelect
-                placeHolder="Sex"
-                selectOptions={[
-                  "Male",
-                  "Female",
-                  "Others",
-                ]}
+            <div className="col-md-6 p-3 sex">
+              <CustomRadioBtn
+                titleName={"Sex"}
+                regName={"sex"}
+                defaultValue={false}
+                selectOptions={["Male", "Female", "Other"]}
+                rules={{ required: true }}
                 register={register}
               />
             </div>

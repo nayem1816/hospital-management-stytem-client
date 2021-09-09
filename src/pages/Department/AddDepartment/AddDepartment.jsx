@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import CustomInput from "./../../../components/InputField/CustomInput/CustomInput";
 import { useForm } from "react-hook-form";
 import CustomButton from "../../../components/InputField/CustomButton/CustomButton";
-import CustomSelect from "../../../components/InputField/CustomSelect/CustomSelect";
+import CustomRadioBtn from "../../../components/InputField/CustomRadioBtn/CustomRadioBtn";
 
 const AddDepartment = () => {
     const { register, handleSubmit } = useForm();
@@ -46,10 +46,13 @@ const AddDepartment = () => {
                                 })}
                             />
                         </div>
-                        <div className="col-md-6 p-3 department">
-                            <CustomSelect
-                                placeHolder="Status"
+                        <div className="col-md-12 p-3 doctor-status">
+                            <CustomRadioBtn
+                                titleName={"Status"}
+                                regName={"doctor-status"}
+                                defaultValue={false}
                                 selectOptions={["Active", "Inactive"]}
+                                rules={{ required: true }}
                                 register={register}
                             />
                         </div>

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import CustomInput from "./../../../components/InputField/CustomInput/CustomInput";
 import { useForm } from "react-hook-form";
 import CustomButton from "../../../components/InputField/CustomButton/CustomButton";
-import CustomSelect from "../../../components/InputField/CustomSelect/CustomSelect";
-import UploadField from "../../../components/InputField/UploadField/UploadField";
+import CustomTextArea from "../../../components/InputField/CustomTextArea/CustomTextArea";
+import CustomRadioBtn from "../../../components/InputField/CustomRadioBtn/CustomRadioBtn";
 
 const AddBed = () => {
     const { register, handleSubmit } = useForm();
@@ -57,29 +57,30 @@ const AddBed = () => {
                                 {...register("admitDate", { required: true })}
                             />
                         </div>
-                        <div className="col-md-6 p-3 mobile">
+                        <div className="col-md-6 p-3 bed-capacity">
                             <CustomInput
                                 placeHolder={"Bed Capacity"}
                                 inputType={"number"}
                                 {...register("bedCapacity", { required: true })}
                             />
                         </div>
-                        <div className="col-md-6 p-3 address">
-                            <CustomInput
-                                placeHolder={"Description"}
-                                inputType={"text"}
-                                {...register("description", { required: true })}
+                        <div className="col-md-12 p-3 description">
+                            <CustomTextArea
+                                placeHolder={"Add Description"}
+                                {...register("description", {
+                                    required: true,
+                                })}
                             />
                         </div>
-                        <div className="col-md-6 p-3 department">
-                            <CustomSelect
-                                placeHolder="Sex"
-                                selectOptions={["Male", "Female", "Others"]}
+                        <div className="col-md-6 p-3 bed-sex">
+                            <CustomRadioBtn
+                                titleName={"Sex"}
+                                regName={"sex"}
+                                defaultValue={false}
+                                selectOptions={["Male", "Female", "Other"]}
+                                rules={{ required: true }}
                                 register={register}
                             />
-                        </div>
-                        <div className="col-md-6 p-3 mobile">
-                            <UploadField placeHolder={"Bed Image"} />
                         </div>
                         <div className="col-md-12 p-3 button">
                             <CustomButton
