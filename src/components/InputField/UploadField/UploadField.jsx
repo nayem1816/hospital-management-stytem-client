@@ -2,19 +2,33 @@ import React from "react";
 import { useState } from "react";
 import "./UploadField.css";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import axios from "axios";
 
-const UploadField = ({ placeHolder }) => {
+const UploadField = ({ placeHolder, setDoctorImage }) => {
     const [fileText, setFileText] = useState(placeHolder);
 
     const fileSelect = () => {
         const fileInput = document.getElementById("file-upload-input");
         fileInput.click();
     };
+
     const fileNameChange = () => {
         const fileInput = document.getElementById("file-upload-input");
-        console.log(fileInput.files);
         const filename = fileInput.files[0].name;
         setFileText(filename);
+
+        const imgData = new FormData();
+        imgData.set("key", "94e8e908997cb2f7fead68d619169951");
+        imgData.append("image", fileInput.files[0]);
+
+        axios
+            .post("https://api.imgbb.com/1/upload", imgData)
+            .then(function (response) {
+                setDoctorImage(response.data.data.image.url);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     };
 
     return (

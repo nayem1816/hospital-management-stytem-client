@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import CustomPassInput from "../../../components/InputField/CustomPassInput/CustomPassInput";
 import CustomInput from "./../../../components/InputField/CustomInput/CustomInput";
@@ -12,8 +12,20 @@ import CustomRadioBtn from "../../../components/InputField/CustomRadioBtn/Custom
 
 const AddDoctor = () => {
     const { register, handleSubmit } = useForm();
+    const [doctorImage, setDoctorImage] = useState(null);
     const onSubmit = (data) => {
-        console.log(data);
+        const doctorsData = data;
+        const doctorFullData = { ...doctorsData, doctorImg: doctorImage };
+
+        fetch("http://localhost:5000/addDoctor", {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify(doctorFullData),
+        })
+            .then((res) => res.json)
+            .then((data) => {
+                alert("Packages Add Successfully");
+            });
     };
     return (
         <div>
@@ -92,7 +104,10 @@ const AddDoctor = () => {
                             />
                         </div>
                         <div className="col-md-6 p-3 picture-upload">
-                            <UploadField placeHolder={"Doctor Image"} />
+                            <UploadField
+                                placeHolder={"Doctor Image"}
+                                setDoctorImage={setDoctorImage}
+                            />
                         </div>
                         <div className="col-md-12 p-3 short-biography">
                             <CustomTextArea
